@@ -59,9 +59,9 @@ public class MyRunner implements CommandLineRunner {
 //        reservationService.saveReservation(List.of(meeticReservation, privateReservation, openSpaceReservation));
 
           //trovare le postazioni in base alla città e al tipo di postazione
-          stationService.findByTypeStationAndBuilding_City(TypeStation.SALA_RIUNIONI,"New York" ).forEach(System.out::println) ;
-          System.out.println( stationService.findByTypeStationAndBuilding_City( TypeStation.SALA_RIUNIONI,"New York"));
 
+          stationService.findByTypeStationAndBuildingCity(TypeStation.SALA_RIUNIONI,"New York" ).forEach(System.out::println) ;
+//          System.out.println( stationService.findByTypeStationAndBuildingCity( TypeStation.SALA_RIUNIONI,"New York"));
 
 
     }

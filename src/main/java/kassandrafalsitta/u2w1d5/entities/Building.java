@@ -39,7 +39,7 @@ public class Building {
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
                 ", city='" + city + '\'' +
-                ", stationList=" + stationList +
+              //  ", stationList=" + stationList +
                 '}';
     }
 }

@@ -28,7 +28,15 @@ public class StationService {
         return stationRepository.findById(stationId).orElseThrow(() -> new NotFoundException(stationId));
     }
 
-    public List<Station> findByTypeStationAndBuilding_City( TypeStation typeStation,String city) {
-        return stationRepository.findByTypeStationAndBuilding_City( typeStation,city);
+    public List<Station> findByTypeStationAndBuildingCity( TypeStation typeStation,String city) {
+       List<Station> stationList= stationRepository.findByTypeStationAndBuildingCity( typeStation,city);
+
+        if(stationList.isEmpty()) {
+            System.out.println("lista vuota");
+            return stationList;
+        } else{
+            System.out.println("Lista piena");
+            return stationList;
+        }
     };
 }

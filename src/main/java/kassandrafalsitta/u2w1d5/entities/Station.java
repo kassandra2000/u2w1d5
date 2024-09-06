@@ -54,7 +54,7 @@ public class Station {
                 ", typeStation=" + typeStation +
                 ", maximumNumOfOccupants=" + maximumNumOfOccupants +
                 ", building=" + building +
-                ", reservationList=" + reservationList +
+               // ", reservationList=" + reservationList +
                 '}';
     }
 

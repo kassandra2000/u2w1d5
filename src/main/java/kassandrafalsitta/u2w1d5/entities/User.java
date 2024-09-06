@@ -38,7 +38,7 @@ public class User {
                 "id=" + id +
                 ", fullName='" + fullName + '\'' +
                 ", email='" + email + '\'' +
-                ", reservationsList=" + reservationsList +
+                //", reservationsList=" + reservationsList +
                 '}';
     }
 }
