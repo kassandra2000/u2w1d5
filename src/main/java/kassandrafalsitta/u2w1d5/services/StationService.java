@@ -1,7 +1,7 @@
 package kassandrafalsitta.u2w1d5.services;
 
-import kassandrafalsitta.u2w1d5.entities.Building;
 import kassandrafalsitta.u2w1d5.entities.Station;
+import kassandrafalsitta.u2w1d5.enums.TypeStation;
 import kassandrafalsitta.u2w1d5.exceptions.NotFoundException;
 import kassandrafalsitta.u2w1d5.exceptions.ValidationException;
 import kassandrafalsitta.u2w1d5.repositories.StationRepository;
@@ -27,4 +27,8 @@ public class StationService {
     public Station findById(UUID stationId) {
         return stationRepository.findById(stationId).orElseThrow(() -> new NotFoundException(stationId));
     }
+
+    public List<Station> findByBuilding_CityAndTypeStation(String city, TypeStation typeStation) {
+        return stationRepository.findByBuilding_CityAndTypeStation(city, typeStation);
+    };
 }

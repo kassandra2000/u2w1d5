@@ -4,6 +4,7 @@ import kassandrafalsitta.u2w1d5.entities.Building;
 import kassandrafalsitta.u2w1d5.entities.Reservation;
 import kassandrafalsitta.u2w1d5.entities.Station;
 import kassandrafalsitta.u2w1d5.entities.User;
+import kassandrafalsitta.u2w1d5.enums.TypeStation;
 import kassandrafalsitta.u2w1d5.services.BuildingService;
 import kassandrafalsitta.u2w1d5.services.ReservationService;
 import kassandrafalsitta.u2w1d5.services.StationService;
@@ -57,6 +58,8 @@ public class MyRunner implements CommandLineRunner {
 //        userService.saveUser(List.of(mario, anna, luca));
 //        reservationService.saveReservation(List.of(meeticReservation, privateReservation, openSpaceReservation));
 
+          //trovare le postazioni in base alla città e al tipo di postazione
+          stationService.findByBuilding_CityAndTypeStation("New York", TypeStation.SALA_RIUNIONI).forEach(System.out::println) ;
     }
 
     public User getUser(String name, String email) {
