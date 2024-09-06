@@ -43,7 +43,6 @@ public class MyRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("ciao");
         //user
         User mario = getUser("Mario Cross", "mariocross@gmail.com");
         User anna = getUser("Anna Smith", "annasmith@gmail.com");
@@ -60,7 +59,7 @@ public class MyRunner implements CommandLineRunner {
 
           //trovare le postazioni in base alla città e al tipo di postazione
 
-          stationService.findByTypeStationAndBuildingCity(TypeStation.SALA_RIUNIONI,"New York" ).forEach(System.out::println) ;
+          stationService.findByTypeStationAndBuilding_City(TypeStation.SALA_RIUNIONI,"New York" ).forEach(System.out::println) ;
 //          System.out.println( stationService.findByTypeStationAndBuildingCity( TypeStation.SALA_RIUNIONI,"New York"));
 
 

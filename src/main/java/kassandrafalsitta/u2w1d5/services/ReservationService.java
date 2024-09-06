@@ -20,6 +20,7 @@ public class ReservationService {
             if (reservationRepository.existsByValidityDate(newReservation.getValidityDate())) {
                 throw new ValidationException("La prenotazione con data: " + newReservation.getValidityDate() + " è già in utilizzo!");
             }
+
             newReservation.getStation().setStateStation(StateStation.OCCUPATO);
             reservationRepository.save(newReservation);
             System.out.println("Nuova prenotazione con data" + newReservation.getValidityDate() + " salvata con successo!");

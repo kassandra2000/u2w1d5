@@ -15,6 +15,6 @@ public interface StationRepository extends JpaRepository<Station, UUID> {
     //uso il trattino basso perche è una convezione per specificare relazioni tra entità
 
 
-    List<Station> findByTypeStationAndBuildingCity( TypeStation typeStation,String city);
+    List<Station> findByTypeStationAndBuilding_City( TypeStation typeStation,String city);
 
 }
