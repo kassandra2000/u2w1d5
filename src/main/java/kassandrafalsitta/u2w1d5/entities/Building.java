@@ -1,9 +1,6 @@
 package kassandrafalsitta.u2w1d5.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,13 +22,14 @@ public class Building {
     private String name;
     private String address;
     private String city;
+
+    @OneToMany(mappedBy = "building")
     private List<Station> stationList;
     //costruttore
-    public Building( String name, String address, String city, List<Station> stationList) {
+    public Building( String name, String address, String city) {
         this.name = name;
         this.address = address;
         this.city = city;
-        this.stationList = stationList;
     }
     //to string
     @Override

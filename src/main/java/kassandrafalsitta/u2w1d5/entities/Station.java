@@ -22,14 +22,39 @@ public class Station {
     @Setter(AccessLevel.NONE)
     private UUID id;
     private String description;
+    @Column(name = "state_station")
     @Enumerated(EnumType.STRING)
     private StateStation stateStation;
+    @Column(name = "type_station")
     @Enumerated(EnumType.STRING)
     private TypeStation typeStation;
+    @Column(name = "maximum_num_occupants")
     private int maximumNumOfOccupants;
+
+    @ManyToOne
+    @JoinColumn(name = "building_id")
     private Building building;
+    @OneToMany(mappedBy = "station")
     private List<Reservation> reservationList;
     //costruttore
-
-
+    public Station( String description, StateStation stateStation, TypeStation typeStation, int maximumNumOfOccupants, Building building) {
+        this.description = description;
+        this.stateStation = stateStation;
+        this.typeStation = typeStation;
+        this.maximumNumOfOccupants = maximumNumOfOccupants;
+        this.building = building;
+    }
+    //to string
+    @Override
+    public String toString() {
+        return "Station{" +
+                "id=" + id +
+                ", description='" + description + '\'' +
+                ", stateStation=" + stateStation +
+                ", typeStation=" + typeStation +
+                ", maximumNumOfOccupants=" + maximumNumOfOccupants +
+                ", building=" + building +
+                ", reservationList=" + reservationList +
+                '}';
+    }
 }

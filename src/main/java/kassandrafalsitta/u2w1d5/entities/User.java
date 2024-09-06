@@ -1,9 +1,6 @@
 package kassandrafalsitta.u2w1d5.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,8 +19,25 @@ public class User {
     @Id
     @Setter(AccessLevel.NONE)
     private UUID id;
+    @Column(name = "full_name")
     private String fullName;
     private String email;
+    @OneToMany(mappedBy = "user")
     private List<Reservation> reservationsList;
     //costruttore
+    public User( String fullName, String email, List<Reservation> reservationsList) {
+        this.fullName = fullName;
+        this.email = email;
+        this.reservationsList = reservationsList;
+    }
+    //to string
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", fullName='" + fullName + '\'' +
+                ", email='" + email + '\'' +
+                ", reservationsList=" + reservationsList +
+                '}';
+    }
 }

@@ -20,8 +20,29 @@ public class Reservation {
     @Id
     @Setter(AccessLevel.NONE)
     private UUID id;
+    @Column(name = "validity_date")
     private LocalDate validityDate;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
+    @ManyToOne
+    @JoinColumn(name = "station_id")
     private Station station;
     //costruttore
+    public Reservation( LocalDate validityDate, User user, Station station) {
+        this.validityDate = validityDate;
+        this.user = user;
+        this.station = station;
+    }
+    //to string
+    @Override
+    public String toString() {
+        return "Reservation{" +
+                "id=" + id +
+                ", validityDate=" + validityDate +
+                ", user=" + user +
+                ", station=" + station +
+                '}';
+    }
 }
