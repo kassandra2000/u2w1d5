@@ -28,7 +28,7 @@ public class StationService {
         return stationRepository.findById(stationId).orElseThrow(() -> new NotFoundException(stationId));
     }
 
-    public List<Station> findByBuilding_CityAndTypeStation(String city, TypeStation typeStation) {
-        return stationRepository.findByBuilding_CityAndTypeStation(city, typeStation);
+    public List<Station> findByTypeStationAndBuilding_City( TypeStation typeStation,String city) {
+        return stationRepository.findByTypeStationAndBuilding_City( typeStation,city);
     };
 }

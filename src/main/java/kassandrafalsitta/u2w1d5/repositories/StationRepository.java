@@ -11,5 +11,6 @@ import java.util.UUID;
 public interface StationRepository extends JpaRepository<Station, UUID> {
     boolean existsByDescription(String description);
     //uso il trattino basso perche è una convezione per specificare relazioni tra entità
-    List<Station> findByBuilding_CityAndTypeStation(String city, TypeStation typeStation);
+    List<Station> findByTypeStationAndBuilding_City( TypeStation typeStation,String city);
+
 }
