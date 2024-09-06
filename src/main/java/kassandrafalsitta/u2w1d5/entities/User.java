@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -23,12 +24,12 @@ public class User {
     private String fullName;
     private String email;
     @OneToMany(mappedBy = "user")
-    private List<Reservation> reservationsList;
+    private List<Reservation> reservationsList ;
     //costruttore
-    public User( String fullName, String email, List<Reservation> reservationsList) {
+    public User( String fullName, String email) {
         this.fullName = fullName;
         this.email = email;
-        this.reservationsList = reservationsList;
+        this.reservationsList =new ArrayList<>();
     }
     //to string
     @Override
